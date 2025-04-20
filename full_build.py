@@ -1,4 +1,4 @@
-# FullBuild.py - Jason Theriault 2025
+# full_build.py - Jason Theriault 2025
 # Does a bit of snooping and builds what needs to be built. Define your envs and hit go
 # jacked a few things from OG ESPixelStick Scripts, even uses them
 # #mybrotherinchrist this has been a savior

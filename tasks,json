@@ -73,7 +73,7 @@
         "label": "[ALL]",
         "type": "shell",
         "command": "python",
-        "args": ["FullBuild.py"],
+        "args": ["full_build.py"],
         "detail": "ERASE/BUILD/UPLOAD - FAST AND CLEAN",
         "presentation": { "close": false }
       },
@@ -83,7 +83,7 @@
         "command": "powershell",
         "args": [
           "-Command",
-          "C:\\Users\\jay\\openocd-esp32\\bin\\openocd.exe -f ch347.cfg -f board/esp-wroom-32.cfg"
+          "C:\\full\\path\\openocd-esp32\\bin\\openocd.exe -f ch347.cfg -f board/esp-wroom-32.cfg"
         ],
         "options": {
           "cwd": "C:\\Users\\jay\\openocd-esp32\\bin"

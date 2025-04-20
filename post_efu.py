@@ -41,7 +41,7 @@ def after_build(source, target, env):
 
     efu_tool = os.path.join(project_dir, "efu_tool.py")
     result = subprocess.run([
-        "python", efu_tool,
+        "C:\\Users\\jay\\.platformio\\python3\\python.EXE", efu_tool,
         "--efu", efu_out,
         "--project", project_dir,
         "--env", variant,

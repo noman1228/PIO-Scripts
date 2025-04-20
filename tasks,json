@@ -1,0 +1,108 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+    {
+    "label": "[GULP]",
+    "options": {
+      "statusbar": {
+          "hide" : true
+        }},
+    "type": "shell",
+    "command": "${workspaceFolder}/gulpme.bat",
+    "problemMatcher": [],
+    "detail": "Run the ESPS GULP batch script"
+  
+  },
+  {
+    "label": "$(chip)$(cloud-upload)",
+    "type": "shell",
+    "command": "pio",
+    "args": ["run", "-t", "post_efu"],
+    "problemMatcher": [],
+    "detail": "CREATE EFU FOR ESPS OTA"
+  
+      },
+      {
+        "label": "$(folder)",
+        "type": "shell",
+        "command": "python",
+        "args": ["folder_hide.py"],
+        "problemMatcher": [],
+        "detail": "TOGGLE ANNOYING FOLDERS",
+        "isBackground": true,
+        "presentation": {
+          "reveal": "never",
+          "panel": "dedicated",
+          "clear": false
+        }
+      },
+      {
+        "label": "$(comment-draft)",
+        "type": "shell",
+        "command": "python",
+        "args": [
+          "${workspaceFolder}/remove_comments.py",
+          "${file}"],
+        "detail": "TOGGLE COMMENTS",
+        "isBackground": true,
+        "presentation": {
+          "reveal": "never",
+          "panel": "dedicated",
+          "clear": false
+        }
+        },
+      {
+        "label": "$(debug-console)",
+        "type": "shell",
+        "command": "python",
+        "args": [
+          "${workspaceFolder}/toggle_debug.py",
+          "${file}"],
+        "detail": "TOGGLE DEBUG LINES IN CURRENT WINDOW",
+        "presentation": { "close": true }
+      },
+      {
+        "label": "[FS-UP]",
+        "type": "shell",
+        "command": "python",
+        "args": ["file_sys.py"],
+        "detail": "Upload filesystem",
+        "presentation": { "close": true }
+      },
+      {
+        "label": "[ALL]",
+        "type": "shell",
+        "command": "python",
+        "args": ["FullBuild.py"],
+        "detail": "ERASE/BUILD/UPLOAD - FAST AND CLEAN",
+        "presentation": { "close": false }
+      },
+      {
+        "label": "[OPENOCD]",
+        "type": "shell",
+        "command": "powershell",
+        "args": [
+          "-Command",
+          "C:\\Users\\jay\\openocd-esp32\\bin\\openocd.exe -f ch347.cfg -f board/esp-wroom-32.cfg"
+        ],
+        "options": {
+          "cwd": "C:\\Users\\jay\\openocd-esp32\\bin"
+        },
+        "isBackground": true,
+        "presentation": {
+          "reveal": "always",
+          "panel": "dedicated"
+        },
+        "problemMatcher": []
+      }
+    ]
+
+      }
+      
+      
+        
+      
+      
+    
+  
+  

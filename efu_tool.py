@@ -1,4 +1,6 @@
-# efu_tool.py (EFU build + validate only)
+# efu_tool.py - Jason Theriault 
+# with tons of code stolen from original ESPixelStick (EFU build + validate only)
+# 
 import argparse
 import configparser
 import csv
@@ -6,9 +8,16 @@ import os
 import struct
 import shutil
 from datetime import datetime
-from colorama import Fore, init
 
-init(autoreset=True)
+# Optional color output (fallback to plain if unavailable)
+try:
+    from colorama import Fore, init
+    init(autoreset=True)
+except ImportError:
+    print("⚠️  colorama not found — output will be uncolored.")
+    class _Dummy:
+        RED = GREEN = YELLOW = RESET = ""
+    Fore = _Dummy()
 
 
 def load_partitions(csv_path):
